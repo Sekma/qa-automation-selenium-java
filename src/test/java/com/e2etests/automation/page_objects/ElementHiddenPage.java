@@ -9,6 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 import com.e2etests.automation.utils.ConfigFileReader;
 import com.e2etests.automation.utils.Setup;
 
+import io.qameta.allure.Step;
+
 public class ElementHiddenPage {
 
     private ConfigFileReader configFileReader;
@@ -28,26 +30,31 @@ public class ElementHiddenPage {
     }
 
     /** Methods **/
+    @Step("Ouvrir la page")
     public void goToUrl() {
-        Setup.getDriver()
-             .get(configFileReader.getProperties("hidden.url"));
+        Setup.getDriver().get(configFileReader.getProperties("hidden.url"));
     }
+    @Step("Cliquer sur le bouton Hide")
     public void clickHiddenButton() {
     	hiddenBtn.click();
     }
+    @Step("Remplir le champ caché avec la valeur : {0}")
     public void fillText(String value) { 
 		executor.executeScript("arguments[0].value = arguments[1]",
 											text, value);
     }
+    @Step("Récupérer le texte du champ caché")
     public String isTextPresent() { 
         return (String) executor.executeScript(
                 "return arguments[0].value;",
                 text
             );
     }
+    @Step("Cliquer sur le bouton Show")
     public void clickShowButton() {
     	showBtn.click();
     }
+    @Step("Vérifier que le champ texte est affiché")
     public boolean isTextDisplayed() { 
         return text.isDisplayed();
     }

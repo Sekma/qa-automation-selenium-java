@@ -5,7 +5,9 @@ import org.openqa.selenium.TakesScreenshot;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
+import io.qameta.allure.Allure;
 
+import java.io.ByteArrayInputStream;
 public class TearDown {
 	/**
 	 * This method is used to close browser. This method is called after the
@@ -18,7 +20,10 @@ public class TearDown {
 		
 		if(scenario.isFailed()) {
 			
-			final byte [] screenShot = ((TakesScreenshot)Setup.getDriver()).getScreenshotAs(OutputType.BYTES);			
+			final byte [] screenShot = ((TakesScreenshot)Setup.getDriver()).getScreenshotAs(OutputType.BYTES);
+			// Screenshot pour Allure
+            Allure.addAttachment("Screenshot - " + scenario.getName(),new ByteArrayInputStream(screenShot));
+            // Screenshot pour Cucumber
 			scenario.attach(screenShot, "image/png", "screenshot");	
 			
 		}

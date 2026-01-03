@@ -9,13 +9,18 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = {"src/spec/features"},
-		plugin = {"pretty", "html:target/cucumber-report.html"},
+		plugin = {"pretty",
+				"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm", /** Allure report **/
+		        "html:target/cucumber-report.html"
+		        },
 		//tags = ("@alert-accept"),
 		//tags = ("@confirm-alert"),
 		//tags = ("@double-click"),
-		//tags = ("@drag-and-drop"),
+		tags = ("@drag-and-drop"),
 		//tags = ("@select-menu"),
-		tags = ("@hidden"),
+		//tags = ("@hidden"),
+		//tags = ("@upload-file"),
+		//tags = (""),
 		//glue = {"com.e2etests.automation.step_definitions"},
 		monochrome = true,
 		snippets = CAMELCASE

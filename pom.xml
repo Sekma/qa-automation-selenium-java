@@ -32,8 +32,11 @@
         <json.version>1.1.1</json.version>
         <junitplatform.version>1.8.1</junitplatform.version>
         <junit.version>5.8.2</junit.version>
+        
+        <!--  Allure report  -->
          <allure.version>2.27.0</allure.version>
-         <allure-junit4.version>2.27.0</allure-junit4.version>
+         <allure-junit4.version>2.27.0</allure-junit4.version>         
+         <allure.results.directory>target/allure-results</allure.results.directory>
     </properties>
     
     <dependencies>
@@ -144,6 +147,7 @@
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.version}</version>
         </dependency>
+        <!--  Allure report  -->
         <dependency>
 			<groupId>io.qameta.allure</groupId>
 			<artifactId>allure-cucumber7-jvm</artifactId>
@@ -175,10 +179,20 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.13.0</version>
         </plugin>
+        <!--  Allure report  -->
         <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.3.0</version>
+          <groupId>org.apache.maven.plugins</groupId>
+    		<artifactId>maven-surefire-plugin</artifactId>
+    		<version>3.3.0</version>
+    		<configuration>
+        		<systemPropertyVariables>
+            		<allure.results.directory>
+                		${allure.results.directory}
+            		</allure.results.directory>
+        		</systemPropertyVariables>
+   			</configuration>
         </plugin>
+        
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.4.2</version>
