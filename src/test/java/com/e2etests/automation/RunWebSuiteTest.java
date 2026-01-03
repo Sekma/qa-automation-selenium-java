@@ -16,11 +16,12 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 		//tags = ("@alert-accept"),
 		//tags = ("@confirm-alert"),
 		//tags = ("@double-click"),
-		tags = ("@drag-and-drop"),
+		//tags = ("@drag-and-drop"),
 		//tags = ("@select-menu"),
 		//tags = ("@hidden"),
 		//tags = ("@upload-file"),
 		//tags = (""),
+		tags = ("@key-board-envent"),
 		//glue = {"com.e2etests.automation.step_definitions"},
 		monochrome = true,
 		snippets = CAMELCASE
