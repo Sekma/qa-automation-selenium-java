@@ -44,6 +44,10 @@ reports/
 screenshots/
 serenity/
 
+# Allure
+allure-results/
+allure-report/
+
 # Environment files
 *.env
 *.env.local
