@@ -22,7 +22,8 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 		//tags = ("@upload-file"),
 		//tags = (""),
 		//tags = ("@key-board-envent"),
-		tags = ("@multiple-select-drop-down"),
+		//tags = ("@multiple-select-drop-down"),
+		tags = ("@navigation"),
 		//glue = {"com.e2etests.automation.step_definitions"},
 		monochrome = true,
 		snippets = CAMELCASE
