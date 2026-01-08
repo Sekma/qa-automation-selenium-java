@@ -25,9 +25,11 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 		//tags = ("@navigation"),
 		//tags = ("@placeholder"),
 		//tags = ("@practice-switch"),
-		tags = ("@prompt-alert"),
+		//tags = ("@prompt-alert"),
+		//tags = ("@right-click"),
+		tags = ("@slider-demo"),
 		//tags = ("@tool-tip"),
-		
+			
 		//glue = {"com.e2etests.automation.step_definitions"},
 		monochrome = true,
 		snippets = CAMELCASE
