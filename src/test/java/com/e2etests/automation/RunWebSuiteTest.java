@@ -27,7 +27,8 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 		//tags = ("@practice-switch"),
 		//tags = ("@prompt-alert"),
 		//tags = ("@right-click"),
-		tags = ("@slider-demo"),
+		//tags = ("@slider-demo"),
+		tags = ("@multi-select"),
 		//tags = ("@tool-tip"),
 			
 		//glue = {"com.e2etests.automation.step_definitions"},
